@@ -1,0 +1,32 @@
+# TripMission
+
+> Door-to-venue travel planning for people who can't afford to arrive late — exam candidates, patients travelling
+> for treatment, first-time job seekers. Photograph an admit card or appointment slip (Cloudinary OCR fills in the
+> plan, then deletes the image); TripMission compares every complete journey by flight, train, bus and road with
+> live Google data via SerpApi, scores it, flags what could go wrong (including weather and local disruption
+> news), says what to book first, plans the way home, and re-plans from the traveller's location if they're
+> running late. Built for BUILDX 2026 by Code-A-Nova (36-hour online hackathon, 1 Oct – 10 Nov 2026).
+
+Stack: Python 3.12 · FastAPI · Pydantic v2 · SQLAlchemy · SerpApi · Cloudinary (Upload API, private assets, OCR
+add-on, Destroy API) · React 19 · TypeScript · Tailwind v4 · Framer Motion. Tests: 199 backend (pytest), 24
+frontend (Vitest); external APIs are mocked or replayed from recorded responses.
+
+## Start here
+- [Evaluator's guide](docs/SUBMISSION.md): judging criteria mapped to code, tests and known limitations
+- [README](README.md): features, setup, environment variables, demo mode
+- [Build log](docs/BUILD_LOG.md): decisions and the problems real data exposed, with fixes
+
+## Cloudinary
+- [Cloudinary client](backend/app/integrations/cloudinary/client.py): private upload with OCR, table-row rebuild from word boxes, destroy
+- [Document parser](backend/app/services/documents/parser.py): OCR text to mission fields, each with the line it came from
+- [Scan endpoint](backend/app/api/routes/documents.py) and [service](backend/app/services/documents/service.py): size/type checks, sign-in, rate limit
+- [Scan UI](frontend/src/components/mission/ScanDocument.tsx): button, drag and drop, paste, scanning preview
+
+## Decision engine
+- [Mission engine](backend/app/engines/mission_engine.py): searches, shortlists, builds, scores, categorises
+- [Itinerary engine](backend/app/engines/itinerary_engine.py), [scoring](backend/app/engines/scoring_engine.py), [risk](backend/app/engines/risk_engine.py)
+- [Weather and disruption news](backend/app/integrations/serpapi/conditions.py), [booking hand-off](backend/app/services/booking.py), [return journey](backend/app/services/return_journey.py)
+
+## Optional
+- [Architecture](docs/ARCHITECTURE.md), [API specification](docs/API_SPECIFICATION.md), [SerpApi integration](docs/SERPAPI_INTEGRATION.md)
+- [Scoring engine](docs/SCORING_ENGINE.md), [Risk engine](docs/RISK_ENGINE.md), [Testing](docs/TESTING.md), [Deployment](docs/DEPLOYMENT.md)

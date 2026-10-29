@@ -1,0 +1,78 @@
+{
+ "search_metadata": {
+  "status": "Success"
+ },
+ "answer_box": {
+  "type": "transport_options",
+  "title": "Trains from Indore to Bhopal",
+  "from": "Indore Junction",
+  "to": "Bhopal (all stations)",
+  "date": "Sat, 24 Oct",
+  "time": "Any time",
+  "climate_friendly": true,
+  "routes": [
+   {
+    "time": "6:10 am – 9:10 am",
+    "duration": "3h",
+    "fare": "₹856 - ₹1,556",
+    "changes": "0 changes"
+   },
+   {
+    "time": "6:40 am – 10:55 am",
+    "duration": "4h 15m",
+    "fare": "₹123 - ₹406",
+    "changes": "0 changes"
+   },
+   {
+    "time": "12:00 pm – 4:10 pm",
+    "duration": "4h 10m",
+    "fare": "₹203 - ₹761",
+    "changes": "0 changes"
+   },
+   {
+    "time": "12:15 pm – 4:53 pm",
+    "duration": "4h 38m",
+    "fare": "₹238 - ₹1,306",
+    "changes": "0 changes"
+   },
+   {
+    "time": "1:15 pm – 6:00 pm",
+    "duration": "4h 45m",
+    "fare": "₹193 - ₹556",
+    "changes": "0 changes"
+   },
+   {
+    "time": "1:55 pm – 6:15 pm",
+    "duration": "4h 20m",
+    "fare": "₹208 - ₹1,226",
+    "changes": "0 changes"
+   },
+   {
+    "time": "4:10 pm – 10:05 pm",
+    "duration": "5h 55m",
+    "fare": "₹213 - ₹1,226",
+    "changes": "0 changes"
+   },
+   {
+    "time": "7:35 pm – 11:25 pm",
+    "duration": "3h 50m",
+    "fare": "₹223 - ₹1,306",
+    "changes": "0 changes"
+   },
+   {
+    "time": "11:15 pm – 5:10 am+1 day",
+    "duration": "5h 55m",
+    "fare": "₹213 - ₹556",
+    "changes": "0 changes"
+   },
+   {
+    "time": "11:30 pm – 3:30 am+1 day",
+    "duration": "4h",
+    "fare": "₹238 - ₹1,306",
+    "changes": "0 changes"
+   }
+  ],
+  "fastest": "3h",
+  "daily_trains": "10"
+ }
+}

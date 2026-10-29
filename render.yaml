@@ -1,0 +1,29 @@
+# Render Blueprint: New > Blueprint, pick this repo. Secrets marked sync: false are asked for in the dashboard.
+services:
+  - type: web
+    name: tripvision
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DEMO_MODE
+        value: "true"
+      - key: FRONTEND_URL
+        sync: false   # e.g. https://tripvision.onrender.com
+      - key: SERPAPI_API_KEY
+        sync: false
+      - key: AI_PROVIDER
+        sync: false
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        sync: false
+      - key: AI_BASE_URL
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
